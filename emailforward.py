@@ -8,7 +8,7 @@ from email.parser import BytesParser
 from email.policy import default
 
 mail = imaplib.IMAP4_SSL('imap.gmail.com')
-mail.login('tsesiren@gmail.com', 'ddhc plrd cmtf sfkm')
+mail.login('tsesiren@gmail.com', 'PASSWORD')
 mail.select('"[Gmail]/All Mail"')
 
 status, email_ids = mail.search(None, '(FROM "Rightmove Property Alerts")')
@@ -35,7 +35,7 @@ if emails:
 if most_recent_email:
     msg = MIMEMultipart("alternative")
     sender = 'tsesiren@gmail.com'
-    recipients = ['chukwong2000@yahoo.com.hk, teresamlso@gmail.com']
+    recipients = ['RECIPIENT1, RECIPIENT2']
     msg['From'] = sender
     msg['To'] = ", ".join(recipients)
     msg['Subject'] = "New property alerts for " + str(date.today())
@@ -43,7 +43,7 @@ if most_recent_email:
 
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login('tsesiren@gmail.com', 'ddhc plrd cmtf sfkm')
+    server.login('tsesiren@gmail.com', 'PASSWORD')
     server.sendmail(sender, recipients, msg.as_string())
     server.quit()
 
