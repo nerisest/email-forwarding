@@ -12,4 +12,5 @@ a little run-through of how it works:
 - the script sets up a SMTP server, connects to Gmail, establishes a TLS connection and sends the email before closing the connection
 
 the script is currently running every day at midnight UTC (to facilitate my parents, where they are currently situated in UTC+8 timezone) through **crontab**, with the following commands:
-- 0 0 * * * /home/tsesiren/Desktop/other stuff/email-automation-thing/emailforward.py
+**command does not work properly so the script is manually executed when a new mail is received.**
+~~- 0 0 * * * /home/tsesiren/Desktop/other stuff/email-automation-thing/emailforward.py~~
