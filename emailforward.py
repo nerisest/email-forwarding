@@ -13,7 +13,8 @@ mail = imaplib.IMAP4_SSL('imap.gmail.com')
 mail.login('EMAIL_ADDRESS', 'PASSWORD')
 mail.select('"[Gmail]/All Mail"')
 
-status, email_ids = mail.search(None, '(FROM "Rightmove Property Alerts")')
+# for information criteria search, the documentation can be found here at https://datatracker.ietf.org/doc/html/rfc3501#section-6.4.4
+status, email_ids = mail.search(None, '(YOUR_SEARCH_CRITERIA)')
 emails = []
 
 for email_id in email_ids[0].split():
