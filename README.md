@@ -29,5 +29,9 @@ w/o automation:
 
 with automation (using **crontab** and **Cronitor**)
 - Download the script and fill in the fields with the format "UPPERCASE_WITH_UNDERSCORES"
-- Open up Terminal with the command "crontab -e" to edit the automation commands, then save the text file afterwards. <br> (For the help of formatting commands, check [here](https://crontab.guru/))
-- 
+- Open up Terminal with the command **"crontab -e"** to edit the automation commands, then save the text file afterwards. <br> (For the help of formatting commands, check [here](https://crontab.guru/))
+- To make the script **executable**, change the directory to the script and run the command "chmod +x YOUR_DIRECTORY_HERE", while replacing the directory with your own.
+
+If you do not want any monitoring software for the script, cron will run the script based on your command. Just make sure that the host PC is up and running when the script is running, otherwise it will **miss** and you will need to wait until the next routine. <br>
+
+However, if you do want monitoring software, [Cronitor](https://cronitor.io/cron-job-monitoring) can be used. Setup procedure can be found after signing up for an account and in the personal dashboard. 
