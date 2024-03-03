@@ -7,11 +7,11 @@ from email.mime.multipart import MIMEMultipart
 from email.parser import BytesParser
 from email.policy import default
 
-# by using IMAP, emails can be retrieved from Gmail (imap.gmail.com)
+# by using IMAP, emails can be retrieved from different email clients
 # using an email address and app password, mails can be retrieved by specifiying an inbox
-mail = imaplib.IMAP4_SSL('imap.gmail.com')
+mail = imaplib.IMAP4_SSL('IMAP_SERVER')
 mail.login('EMAIL_ADDRESS', 'PASSWORD')
-mail.select('"[Gmail]/All Mail"')
+mail.select('"SPECIFIC_INBOX"')
 
 # for information criteria search, the documentation can be found here at https://datatracker.ietf.org/doc/html/rfc3501#section-6.4.4
 status, email_ids = mail.search(None, '(YOUR_SEARCH_CRITERIA)')
@@ -51,7 +51,7 @@ if most_recent_email:
     msg['Subject'] = "New property alerts for " + str(date.today())
     msg.attach(MIMEText(most_recent_email, 'html'))
 
-    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server = smtplib.SMTP('SMTP_SERVER', 587)
     server.starttls()
     server.login('EMAIL_ADDRESS', 'PASSWORD')
     server.sendmail(sender, recipients, msg.as_string())
