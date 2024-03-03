@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import imaplib
 import smtplib
 import email.utils
