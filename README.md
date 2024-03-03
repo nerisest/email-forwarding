@@ -4,7 +4,7 @@
 
 ### Introduction
 
-A small automation script that I thought of over the weekend. The main functionality is to forward the **most recent email**, given a specific inbox and a search criteria (sender/subject...).<br>
+A small automation script that I thought of over the weekend. The main functionality is to forward the **most recent email** in an **HTML format**, given a specific inbox and a search criteria (sender/subject...). <br>
 This was used to forward the most recent price alerts regarding properties for rent in the City of Edinburgh, for my usage. However, it can be applied to other uses.
 
 a little run-through of how it works:
@@ -25,4 +25,9 @@ General information: **An app password is required for the IMAP/SMTP servers to 
 
 w/o automation: 
 - Download the script and fill in the fields with the format "UPPERCASE_WITH_UNDERSCORES"
+- Run the script directly (either through Terminal or in your code editor). It should take around 1-2 secs.
+
+with automation (using **crontab** and **Cronitor**)
+- Download the script and fill in the fields with the format "UPPERCASE_WITH_UNDERSCORES"
+- Open up Terminal with the command "crontab -e" to edit the automation commands, then save the text file afterwards. <br> (For the help of formatting commands, check [here](https://crontab.guru/))
 - 
