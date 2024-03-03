@@ -1,6 +1,11 @@
 # email-forwarding
 
-a small little automation script that I thought of over the weekend. main functionality is to forward the most recent price alert updates (email) regarding rents in the City of Edinburgh.
+## Date: 21st Februrary, 2024
+
+### Introduction
+
+A small automation script that I thought of over the weekend. The main functionality is to forward the **most recent email**, given a specific inbox and a search criteria (sender/subject...).<br>
+This was used to forward the most recent price alerts regarding properties for rent in the City of Edinburgh, for my usage. However, it can be applied to other uses.
 
 a little run-through of how it works:
 - script logs in to the Gmail IMAP server with my email address and app password, then selects the correct mailbox
@@ -11,7 +16,13 @@ a little run-through of how it works:
   - this email is then passed into a MIMEMultiPart object, creating the email with respective senders and recipients
 - the script sets up a SMTP server, connects to Gmail, establishes a TLS connection and sends the email before closing the connection
 
-**my command for crontab does not work properly so the script is manually executed when a new mail is received. will be fixed in a later date.**
+### Setup
+General information: **An app password is required for the IMAP/SMTP servers to work with the script.** Procedures can be found at the links below for different email clients:
+- [Outlook](https://support.microsoft.com/en-gb/account-billing/using-app-passwords-with-apps-that-don-t-support-two-step-verification-5896ed9b-4263-e681-128a-a6f2979a7944)
+- [Gmail](https://support.google.com/accounts/answer/185833?hl=en)
+- [Yahoo](https://help.yahoo.com/kb/SLN15241.html)
+- [Apple Mail](https://support.apple.com/en-gb/102654)
 
-~~the script is currently running every day at midnight UTC (to facilitate my parents, where they are currently situated in UTC+8 timezone) through **crontab**, with the following commands:~~
-~~- 0 0 * * * /home/tsesiren/Desktop/other stuff/email-automation-thing/emailforward.py~~
+w/o automation: 
+- Download the script and fill in the fields with the format "UPPERCASE_WITH_UNDERSCORES"
+- 
